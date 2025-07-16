@@ -4,4 +4,21 @@
 <mapper namespace="com.neuedu.ylbx.mapper.InpatientMedicalMapper">
 
 
+    <select id="selectByPatientId" resultType="com.neuedu.ylbx.vo.MedicalServiceVo">
+
+        SELECT
+            im.id,
+            im.order_time AS orderTime,
+
+            ms.medical_name AS medicalName,
+            ms.medical_number AS medicalNumber,
+            ms.medical_exclude AS medicalExclude,
+            ms.medical_unit AS medicalUnit,
+            ms.medical_price AS medicalPrice
+        FROM inpatient_medical im
+                 JOIN medical_service ms ON im.medical_id = ms.id
+        WHERE im.patient_id = #{patientId}
+        ORDER BY im.order_time DESC
+        </select>
+
 </mapper>

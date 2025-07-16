@@ -4,4 +4,18 @@
 <mapper namespace="com.neuedu.ylbx.mapper.InpatientDiseaseMapper">
 
 
+    <select id="selectByPatientId" resultType="com.neuedu.ylbx.pojo.DiseaseInfo">
+        SELECT
+            im.id,
+            im.order_time AS orderTime,
+
+            ms.disease_code AS diseaseCode,
+            ms.disease_name AS diseaseName,
+            ms.diseaseICD AS diseaseICD,
+            ms.disease_category AS diseaseCategory
+        FROM inpatient_disease im
+                 JOIN disease_info ms ON im.disease_id = ms.id
+        WHERE im.patient_id = #{patientId}
+        ORDER BY im.order_time DESC
+    </select>
 </mapper>

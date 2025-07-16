@@ -30,15 +30,19 @@ public class WebConfig implements WebMvcConfigurer {
     /**
      * 拦截器校验Token
      */
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        //定义排除swagger访问的路径、登录接口
-        String[] swaggerExcludes = new String[]{"/swagger-ui.html", "/doc.html", "/swagger-resources/**", "/webjars/**", "/login/**"};
-        registry.addInterceptor(checkTokenInterceptor)
-                .addPathPatterns("/**") //拦截所有的 url
-                .excludePathPatterns("/user/login")//排除url: /user/login (登录)
-                .excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**", "/doc.html/**", "/");
-    }
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        //定义排除swagger访问的路径、登录接口
+//        String[] swaggerExcludes = new String[]{"/swagger-ui.html", "/doc.html", "/swagger-resources/**", "/webjars/**", "/login/**"};
+//        registry.addInterceptor(checkTokenInterceptor)
+//                .addPathPatterns("/**") //拦截所有的 url
+//                .excludePathPatterns("/user/login")//排除url: /user/login (登录)
+//                .excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**", "/doc.html/**", "/");
+//    }
+
+
+
+
 
 //    @Override
 //    public void addResourceHandlers(ResourceHandlerRegistry registry) {

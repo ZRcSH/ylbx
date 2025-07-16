@@ -16,6 +16,9 @@ public class InpatientDiagnosis {
     @ApiModelProperty("主键ID")
     private Integer id;
 
+    @ApiModelProperty(value = "患者ID")
+    private Long patientId;          // 患者ID
+
     @ApiModelProperty("开立时间")
     private LocalDateTime orderTime;
 

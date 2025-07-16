@@ -1,6 +1,7 @@
 package com.neuedu.ylbx.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
@@ -22,6 +23,7 @@ public class DiseaseInfo {
     private String diseaseName;
 
     @ApiModelProperty("国际疾病ICD编码")
+    @TableField("diseaseICD")
     private String diseaseICD;
 
     @ApiModelProperty("疾病类型")
